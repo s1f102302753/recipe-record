@@ -23,6 +23,7 @@ const AddRecipe = ({ foodName, date, image, onChangeFoodName, onChangeDate, onCh
                     placeholder="写真を追加"
                 />
                 {image && <img src={image} alt="upload file" style={{ width: "100px", height: "100px" }} />}
+                <br></br>
                 <button type="submit">登録</button>
             </form>
         </div>

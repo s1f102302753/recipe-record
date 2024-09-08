@@ -1,26 +1,27 @@
 import React, { useState, useEffect } from 'react'
 
-const recipeList = ({ recipes }) => {
+const RecipeList = ({ recipes }) => {
     return (
         <div>
             <h3>レシピ集</h3>
-            <ul>
-                {recipes.map((recipe, index) => (
-                    <li key={index} className="recipe-item">
-                        <span className="recipe-name">{recipe.foodName}</span>
-                        {recipe.image && (
-                            <img
-                                src={recipe.image}
-                                alt={recipe.foodName}
-                                style={{ maxWidth: "100px", maxHeight: "100px" }}
-                            />
-                        )}
-                        <p><small className="recipe-date">{recipe.date}</small></p>
-                    </li>
-                ))}
-            </ul>
+                <div className="recipe-list">
+                    {recipes.map((recipe, index) => (
+                        <div key={index} className="recipe-item">
+                            <p className="recipe-date">{recipe.date}</p>
+                            {recipe.image && (
+                                <img
+                                    src={recipe.image}
+                                    alt={recipe.foodName}
+                                    style={{ maxWidth: "100px", maxHeight: "100px" }}
+                                />
+                            )}
+                            <span className="recipe-name">{recipe.foodName}</span>
+                            
+                        </div>
+                    ))}
+                </div>
         </div>
     );
 };
 
-export default recipeList
+export default RecipeList
