@@ -1,6 +1,6 @@
-import React, { useState } from 'react'
+import React, { useState } from 'react';
 
-const AddRecipe = ({ foodName, date, image, onChangeFoodName, onChangeDate, onChangeImage, handleSubmit }) => {
+const AddRecipe = ({ foodName, date, image, onChangeFoodName, onChangeDate, onChangeImage, handleSubmit, fileInputKey }) => {
     return (
         <div className='add-recipe'>
             <h3>レシピ追加</h3>
@@ -17,10 +17,10 @@ const AddRecipe = ({ foodName, date, image, onChangeFoodName, onChangeDate, onCh
                     onChange={onChangeDate}
                 />
                 <input
+                    key={fileInputKey}
                     type="file"
                     accept="image/*"
                     onChange={onChangeImage}
-                    placeholder="写真を追加"
                 />
                 {image && <img src={image} alt="upload file" style={{ width: "100px", height: "100px" }} />}
                 <br></br>
@@ -30,4 +30,4 @@ const AddRecipe = ({ foodName, date, image, onChangeFoodName, onChangeDate, onCh
     );
 };
 
-export default AddRecipe
+export default AddRecipe;
