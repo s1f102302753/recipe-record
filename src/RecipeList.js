@@ -4,7 +4,7 @@ import { Link } from "react-router-dom";
 const RecipeList = ({ recipes }) => {
     return (
         <div>
-            <h3>レシピ集</h3>
+            <h2>レシピ集</h2>
             <div className="recipe-list">
                 {recipes.map((recipe) => (
                     <div 
@@ -12,10 +12,15 @@ const RecipeList = ({ recipes }) => {
                         className="recipe-item"
                         style={{ cursor: 'pointer', padding: '10px', border: '1px #add', borderRadius: '5px', marginBotton: '10px' }}
                     >
-                        <p className="recipe-date">{recipe.date}</p>
-                        <Link to={`/detail/${recipe.id}`} >
-                            <span className="recipe-name">{recipe.foodName}</span>      
-                        </Link>
+                        <div className="recipe-name">
+                            <h3>
+                                <Link to={`/detail/${recipe.id}`} >
+                                    <span className="recipe-name">{recipe.foodName}</span>      
+                                </Link>
+                            </h3>
+                            <small className="recipe-date">{recipe.date}</small>
+                        </div>
+
                         {recipe.image && (
                             <img
                                 src={recipe.image}

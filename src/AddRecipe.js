@@ -3,7 +3,7 @@ import React, { useState } from 'react';
 const AddRecipe = ({ foodName, date, image, onChangeFoodName, onChangeDate, onChangeImage, handleSubmit, fileInputKey }) => {
     return (
         <div className='add-recipe'>
-            <h3>レシピ追加</h3>
+            <h2>レシピ追加</h2>
             <form onSubmit={handleSubmit}>
                 <input
                     value={foodName}

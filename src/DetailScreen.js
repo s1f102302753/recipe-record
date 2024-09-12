@@ -9,7 +9,7 @@ const DetailScreen = ({ recipes }) => {
     //レシピの情報を取得して表示する処理を追加
     return (
         <div>
-            <h3>レシピの詳細</h3>
+            <h2>レシピの詳細</h2>
             <p>{selectedRecipe.date}</p>
             {selectedRecipe ? (
                 <>
